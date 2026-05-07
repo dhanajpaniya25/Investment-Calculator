@@ -1,89 +1,191 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
+/* Applying box-sizing to all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Styling the entire page body */
 body {
+
+  /* Removing default margin */
   margin: 0;
+
+  /* Main font family */
   font-family: 'Quicksand', sans-serif;
+
+  /* Smoother font rendering for browsers */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Background gradient */
   background: radial-gradient(#303b37, #1a1f1d);
+
+  /* Default text color */
   color: #e1eeeb;
+
+  /* Minimum full screen height */
   min-height: 100vh;
 }
 
+
+/* Header section styling */
 #header {
+
+  /* Center align content */
   text-align: center;
+
+  /* Add spacing around header */
   margin: 3rem auto;
 }
 
 
+/* Styling header logo image */
 #header img {
+
+  /* Fixed width and height */
   width: 5rem;
   height: 5rem;
+
+  /* Keep image proportions */
   object-fit: contain;
+
+  /* Transparent background */
   background-color: transparent;
 }
 
+
+/* Header title styling */
 #header h1 {
   font-size: 1.5rem;
 }
 
+
+/* User input container styling */
 #user-input {
+
+  /* Inner spacing */
   padding: 1rem;
+
+  /* Maximum width of form */
   max-width: 30rem;
+
+  /* Center align form */
   margin: 2rem auto;
+
+  /* Rounded corners */
   border-radius: 4px;
+
+  /* Green gradient background */
   background: linear-gradient(180deg, #307e6c, #2b996d);
 }
 
+
+/* Grouping input fields side by side */
 .input-group {
+
+  /* Display items in a row */
   display: flex;
+
+  /* Add spacing between items */
   justify-content: space-evenly;
   gap: 1.5rem;
 }
 
+
+/* Label styling */
 #user-input label {
+
+  /* Place label above input */
   display: block;
+
+  /* Space below label */
   margin-bottom: 0.25rem;
+
+  /* Secondary font */
   font-family: 'Roboto Condensed', sans-serif;
+
+  /* Small uppercase text */
   font-size: 0.5rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
+
+/* Input field styling */
 #user-input input {
+
+  /* Full width input */
   width: 100%;
+
+  /* Inner spacing */
   padding: 0.5rem;
+
+  /* Border styling */
   border: 1px solid #76c0ae;
   border-radius: 0.25rem;
+
+  /* Transparent background */
   background-color: transparent;
+
+  /* Text color */
   color: #c2e9e0;
+
+  /* Text size */
   font-size: 1rem;
 }
 
+
+/* Results table styling */
 #result {
+
+  /* Maximum table width */
   max-width: 50rem;
+
+  /* Center align table */
   margin: 2rem auto;
+
+  /* Inner spacing */
   padding: 1rem;
+
+  /* Fixed column layout */
   table-layout: fixed;
+
+  /* Space between table cells */
   border-spacing: 1rem;
+
+  /* Align text to the right */
   text-align: right;
 }
 
+
+/* Table header styling */
 #result thead {
+
+  /* Smaller font size */
   font-size: 0.7rem;
+
+  /* Header text color */
   color: #83e6c0;
 }
 
+
+/* Table body styling */
 #result tbody {
+
+  /* Font for table content */
   font-family: 'Roboto Condensed', sans-serif;
+
+  /* Font size */
   font-size: 0.85rem;
+
+  /* Text color */
   color: #c2e9e0;
 }
 
+
+/* Utility class for center alignment */
 .center {
   text-align: center;
 }

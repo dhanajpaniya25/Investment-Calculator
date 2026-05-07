@@ -1,38 +1,68 @@
-// This function expects a JS object as an argument
-// The object should contain the following properties
-// - initialInvestment: The initial investment amount
-// - annualInvestment: The amount invested every year
-// - expectedReturn: The expected (annual) rate of return
-// - duration: The investment duration (time frame)
+// This function calculates yearly investment growth results
+// It expects an object with the following properties:
+// - initialInvestment: Starting investment amount
+// - annualInvestment: Amount added every year
+// - expectedReturn: Expected annual return rate (in percentage)
+// - duration: Total investment duration in years
+
 export function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
   expectedReturn,
   duration,
 }) {
+
+  // Array to store yearly investment data
   const annualData = [];
+
+  // Initial investment value
   let investmentValue = initialInvestment;
 
+  // Loop through each year of the investment duration
   for (let i = 0; i < duration; i++) {
-    const interestEarnedInYear = investmentValue * (expectedReturn / 100);
-    investmentValue += interestEarnedInYear + annualInvestment;
+
+    // Calculate interest earned for the current year
+    const interestEarnedInYear =
+      investmentValue * (expectedReturn / 100);
+
+    // Update investment value by adding:
+    // current value + earned interest + yearly investment
+    investmentValue +=
+      interestEarnedInYear + annualInvestment;
+
+    // Store yearly investment details
     annualData.push({
-      year: i + 1, // year identifier
-      interest: interestEarnedInYear, // the amount of interest earned in this year
-      valueEndOfYear: investmentValue, // investment value at end of year
-      annualInvestment: annualInvestment, // investment added in this year
+
+      // Current year number
+      year: i + 1,
+
+      // Interest earned in current year
+      interest: interestEarnedInYear,
+
+      // Total investment value at end of year
+      valueEndOfYear: investmentValue,
+
+      // Amount invested during the year
+      annualInvestment: annualInvestment,
     });
   }
 
+  // Return complete yearly investment data
   return annualData;
 }
 
-// The browser-provided Intl API is used to prepare a formatter object
-// This object offers a "format()" method that can be used to format numbers as currency
-// Example Usage: formatter.format(1000) => yields "$1,000"
-export const formatter = new Intl.NumberFormat('en-US', {
+
+// Formatter object for Indian currency format (INR)
+// Used to display numbers like ₹1,00,000
+export const formatter = new Intl.NumberFormat('en-IN', {
+
+  // Currency formatting style
   style: 'currency',
-  currency: 'USD',
+
+  // Currency type: Indian Rupee
+  currency: 'INR',
+
+  // No decimal values
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
